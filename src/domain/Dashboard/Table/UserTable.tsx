@@ -68,7 +68,13 @@ export function UserTable<TData, TValue>({
 
   return (
     <div>
-      <div className="m-2 flex flex-col md:flex-row items-center gap-2 pt-2">
+      <h2 className="text-base font-semibold leading-7 text-gray-900">
+        Team Members
+      </h2>
+      <p className="mt-1 text-sm leading-6 text-gray-600">
+        Manage your team members here
+      </p>
+      <div className="flex flex-col md:flex-row items-center gap-2 pt-2 mb-2">
         {/* Search By name */}
         <Input
           placeholder="Search by name or role"

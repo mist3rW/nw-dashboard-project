@@ -16,7 +16,7 @@ export default function Users() {
   });
   if (!dataTable) return null;
   return (
-    <div className="mx-auto py-10 w-full">
+    <div className="mx-auto w-full">
       <UserTable columns={columns} data={dataTable} />
     </div>
   );

@@ -54,7 +54,7 @@ export const columns: ColumnDef<UserColumn>[] = [
   },
   {
     accessorKey: 'type',
-    header: 'Worker Type',
+    header: 'Type',
   },
   {
     accessorKey: 'status',

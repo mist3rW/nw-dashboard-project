@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import users from '../../data/data';
 
 export default function SingleUsers() {
@@ -91,7 +91,38 @@ export default function SingleUsers() {
               {user?.status}
             </dd>
           </div>
+          <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt className="text-sm font-medium leading-6 text-gray-900">
+              About
+            </dt>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos
+              doloribus consequatur placeat saepe tenetur dicta ullam reiciendis
+              cum ducimus deserunt sint facilis amet numquam qui, architecto
+              quos eum nulla odio delectus, veniam reprehenderit sequi. Expedita
+              nulla ipsam amet, vero obcaecati veritatis fugit temporibus
+              dolorum placeat commodi similique mollitia dolores excepturi?
+            </dd>
+          </div>
         </dl>
+      </div>
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <Link to="/users">
+          <button
+            type="button"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
+            Cancel
+          </button>
+        </Link>
+        <Link to="/users">
+          <button
+            type="submit"
+            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Save
+          </button>
+        </Link>
       </div>
     </div>
   );

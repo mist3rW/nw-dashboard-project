@@ -18,7 +18,7 @@ export default function DashboardNavbar() {
     // dispatch(setIsDarkMode(!isDarkMode));
   };
   return (
-    <div className="flex justify-between items-center w-full mb-7">
+    <div className="flex justify-between items-center w-full mb-4">
       {/* LEFT */}
       <div className="flex justify-between items-center gap-5">
         <button
