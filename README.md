@@ -1,50 +1,47 @@
-# React + TypeScript + Vite
+# NW Dashboard Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NW Dashboard is a React-based dashboard application designed to provide an overview of various statistics and data insights for teams. The application is built with reusable components, styled using Tailwind CSS, and features a seamless UI powered by ShadCN UI. Data validation is handled by Zod, while Redux is used for state management. The project is also built with TypeScript for type-safe development.
 
-Currently, two official plugins are available:
+## 📦 Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To set up the project locally, follow these steps:
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone https://github.com/mist3rW/nw-dashboard-project.git
+   cd nw-dashboard-project
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. **Install dependencies:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+   Make sure you have [Node.js](https://nodejs.org/) installed. Then, run:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   Start the application by running:
+
+   ```bash
+   npm start
+   ```
+
+   This will launch the development server at http://localhost:5173.
+
+## Usage
+
+Once the development server is running, open your browser and navigate to http://localhost:5173 to view the dashboard.
+
+Login Information
+
+To access the team dashboard, log in using the following credentials:
+
+```
+ email: admin@nuttanan.com
+ password: adminpassword
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+After logging in, you will have access to the dashboard, which includes key statistics such as team member overviews, member roles, and newcomers for the week.

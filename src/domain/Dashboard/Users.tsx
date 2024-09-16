@@ -3,7 +3,6 @@ import { columns } from './Table/Column';
 import users from '../../data/data';
 
 export default function Users() {
-  console.log('users', users);
   const dataTable = users.map((user) => {
     return {
       id: user.id,

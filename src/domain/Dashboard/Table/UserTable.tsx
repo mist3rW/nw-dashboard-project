@@ -36,14 +36,6 @@ interface UserTableProps<TData, TValue> {
   data: TData[];
 }
 
-const customFilterFn = (rows: any, columnId: string, filterValue: string) => {
-  const memberName = rows.original.memberInfo.name.toLowerCase();
-  const role = rows.original.role.toLowerCase();
-  const searchValue = filterValue.toLowerCase();
-
-  return memberName.includes(searchValue) || role.includes(searchValue);
-};
-
 export function UserTable<TData, TValue>({
   columns,
   data,
@@ -51,6 +43,15 @@ export function UserTable<TData, TValue>({
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [globalFilter, setGlobalFilter] = useState<string>('');
+
+  // @ts-expect-error ignore
+  const customFilterFn = (rows: any, columnId: string, filterValue: string) => {
+    const memberName = rows.original.memberInfo.name.toLowerCase();
+    const role = rows.original.role.toLowerCase();
+    const searchValue = filterValue.toLowerCase();
+
+    return memberName.includes(searchValue) || role.includes(searchValue);
+  };
 
   const table = useReactTable({
     data,
@@ -120,11 +121,11 @@ export function UserTable<TData, TValue>({
               }
             }}
           >
-            <SelectTrigger className="w-5/12">
+            <SelectTrigger className="w-5/12 text-secondary-foreground">
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectGroup>
+              <SelectGroup className="">
                 <SelectItem value="all">All Status</SelectItem>
                 <SelectItem value="Active">Active</SelectItem>
                 <SelectItem value="Paused">Paused</SelectItem>
@@ -196,7 +197,7 @@ export function UserTable<TData, TValue>({
             )}
           </TableBody>
         </Table>
-        <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="flex items-center justify-end space-x-2 py-4 ">
           <Button
             variant="outline"
             size="sm"

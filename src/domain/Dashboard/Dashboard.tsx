@@ -83,7 +83,7 @@ export default function Dashboard() {
           primaryIcon={
             <UserRoundPlus size={24} className="w-6 h-6 text-blue-500" />
           }
-          users={newComersThisWeek}
+          users={newComersThisWeek.slice(0, 3)}
         />
         <StatCard
           title="Member Type"

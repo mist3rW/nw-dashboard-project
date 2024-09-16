@@ -15,7 +15,7 @@ function DashboardSidebar() {
 
   const sidebarClassNames = `fixed flex flex-col ${
     isSidebarCollapsed ? 'w-0 md:w-16' : 'w-72 md:w-64'
-  } bg-white transition-all duration-300 overflow-hidden h-full shadow-md z-40`;
+  } bg-secondary transition-all duration-300 overflow-hidden h-full shadow-md z-40`;
 
   return (
     <div className={sidebarClassNames}>
@@ -26,7 +26,9 @@ function DashboardSidebar() {
           isSidebarCollapsed ? 'px-4' : 'px-8'
         )}
       >
-        <div className="font-extrabold text-2xl">NW</div>
+        <div className="font-extrabold text-2xl text-secondary-foreground">
+          NW
+        </div>
       </div>
       <div
         onClick={toggleSidebar}
@@ -36,7 +38,7 @@ function DashboardSidebar() {
       </div>
 
       {/* Links */}
-      <div className="flex-grow mt-8">
+      <div className="flex-grow mt-8 ">
         <SidebarLink
           href="/dashboard"
           icon={Layout}
@@ -89,20 +91,21 @@ const SidebarLink = ({
   return (
     <Link to={href}>
       <div
-        className={`cursor-pointer flex items-center ${
+        className={`cursor-pointer flex items-center hover:bg-primary/20  ${
           isCollapsed ? 'justify-center py-4' : 'justify-start px-8 py-4'
         }
-        hover:text-blue-500 hover:bg-blue-100 gap-3 transition-colors ${
-          isActive ? 'bg-blue-200 text-white' : ''
-        }
+         ${isActive ? 'bg-primary text-secondary dark:bg-primary' : ''}
+
       }`}
       >
-        <Icon className="w-6 h-6 !text-gray-700" />
+        <Icon className="w-6 h-6 dark:text-white" />
 
         <span
           className={`${
             isCollapsed ? 'hidden' : 'block'
-          } font-medium text-gray-700`}
+          } ml-1 font-medium text-secondary-foreground ${
+            isActive ? 'text-secondary dark:text-white' : ''
+          }`}
         >
           {label}
         </span>

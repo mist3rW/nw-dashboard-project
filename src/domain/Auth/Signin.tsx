@@ -46,7 +46,7 @@ export default function Signin() {
       return;
     }
     setError('');
-    console.log(data);
+
     setSuccess('Successfully signed in, redirecting...');
     dispatch(setIsAuth(true));
     setTimeout(() => {
