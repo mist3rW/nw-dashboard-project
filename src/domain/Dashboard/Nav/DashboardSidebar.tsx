@@ -13,12 +13,12 @@ function DashboardSidebar() {
     dispatch(setIsSidebarCollapse(!isSidebarCollapsed));
   };
 
-  const sidebarClassNames = `fixed flex flex-col ${
-    isSidebarCollapsed ? 'w-0 md:w-16' : 'w-72 md:w-64'
-  } bg-secondary transition-all duration-300 overflow-hidden h-full shadow-md z-40`;
-
   return (
-    <div className={sidebarClassNames}>
+    <div
+      className={`fixed flex flex-col ${
+        isSidebarCollapsed ? 'w-0 md:w-16' : 'w-72 md:w-64'
+      } bg-secondary transition-all duration-300 overflow-hidden h-full shadow-md z-40`}
+    >
       {/* Logo and Title */}
       <div
         className={cn(
@@ -87,9 +87,15 @@ const SidebarLink = ({
   label,
   isCollapsed,
 }: SidebarLinkProps) => {
+  const dispatch = useDispatch();
   const isActive = window.location.pathname === href;
   return (
-    <Link to={href}>
+    <Link
+      to={href}
+      onClick={() => {
+        dispatch(setIsSidebarCollapse(true));
+      }}
+    >
       <div
         className={`cursor-pointer flex items-center hover:bg-primary/20  ${
           isCollapsed ? 'justify-center py-4' : 'justify-start px-8 py-4'

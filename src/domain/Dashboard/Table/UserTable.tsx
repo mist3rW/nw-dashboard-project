@@ -83,7 +83,7 @@ export function UserTable<TData, TValue>({
           onChange={(event) => setGlobalFilter(event.target.value)}
           className="w-full md:w-[220px]"
         />
-        <div className="flex flex-row gap-1 ">
+        <div className="flex flex-row gap-1 w-full md:w-fit">
           {/* Worker Type Filter */}
           <Select
             value={
