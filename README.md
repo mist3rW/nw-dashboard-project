@@ -26,7 +26,7 @@ To set up the project locally, follow these steps:
    Start the application by running:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    This will launch the development server at http://localhost:5173.
