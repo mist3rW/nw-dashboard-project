@@ -32,7 +32,7 @@ export default function DashboardWrapper() {
       <DashboardSidebar />
       <main
         className={cn(
-          'flex flex-col w-full h-full py-7 px-9 bg-red-50',
+          'flex flex-col w-full h-full py-7 px-9 ',
           isSidebarCollapsed ? 'md:pl-24' : 'md:pl-72'
         )}
       >
